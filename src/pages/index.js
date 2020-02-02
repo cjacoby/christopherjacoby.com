@@ -1,94 +1,50 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
 
-export default ({ data }) => {
-  console.log(data)
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+
+const IndexPage = () => {
   return (
-    <Layout>
-      <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >
-          Amazing Pandas Eating Things
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h3
-              css={css`
-                margin-bottom: ${rhythm(1 / 4)};
-              `}
-            >
-              {node.frontmatter.title}{" "}
-              <span
-                css={css`
-                  color: #bbb;
-                `}
-              >
-                — {node.frontmatter.date}
-              </span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
-      </div>
-    </Layout>
+  <Layout>
+    <SEO title="Home" />
+
+    <p>
+      I am a Machine Learning Engineer / "Full Stack Data Scientist", with particular interest in Audio & Music,
+      and how computers can help us be more human. 
+    </p>
+    <p>
+      I have a Masters in Music Technology from NYU / Steinhardt, where I worked in the <a href="https://research.steinhardt.nyu.edu/marl/">Music & Audio Research Laboratory (MARL)</a> with <a href="https://wp.nyu.edu/jpbello/">Juan Bello</a>.
+      I am currently a Senior Data Scientist in Change Healthcare's Artificial Intelligence team. Prior to that
+      I worked for a series of Music Techology startups.
+    </p>
+
+    <h3>Software</h3>
+    <p>
+      <ul>
+        <li>Pescador</li>
+        <li>Manta?</li>
+      </ul>
+    </p>
+
+    <h3>Data</h3>
+    <p>
+      <ul>
+        <li>Pescador</li>
+        <li>Manta?</li>
+      </ul>
+    </p>
+
+    <h3>Publications</h3>
+    <p>
+      <ul>
+        <li>Few papers</li>
+      </ul>
+    </p>
+
+  </Layout>
   )
 }
 
-export const query = graphql`
-  query {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`
 
-
-// import React from "react"
-// import { Link } from "gatsby"
-
-// import Layout from "../components/layout"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
-
-
-
-
-// const IndexPage = () => (
-//   <Layout>
-//     <SEO title="Home" />
-//     <h1>christopherjacoby.com</h1>
-
-//     <ul>
-//       <ul><Link to="/page-2/">Go to page 2</Link></ul>
-//       <ul><Link to="/blog/">Blog</Link></ul>
-//       <ul><Link to="/music/">Music</Link></ul>
-//     </ul>
-
-//     <p>Welcome to your new Gatsby site.</p>
-//     <p>Now go build something great.</p>
-//     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//       <Image />
-//     </div>
-//   </Layout>
-// )
-
-
-// export default IndexPage
+export default IndexPage

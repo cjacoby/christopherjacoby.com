@@ -42,6 +42,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-shadow: none;
+  outline-width: 0;
 }
 a:active,
 a:hover {

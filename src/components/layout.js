@@ -13,6 +13,7 @@ import React from "react"
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
 import Header from "../components/header"
+import "./layout.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -56,7 +57,7 @@ const Layout = ({ children }) => (
 )
 
 // import Header from "./header"
-// import "./layout.css"
+ 
 
 // export default ({ children }) => (
 //   <div

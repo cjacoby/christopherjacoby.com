@@ -13,6 +13,7 @@ const BandsPage = () => (
           <li>Madeira</li>
           <li>Phoenix</li>
       </ul>
+      <h3></h3>
     </Layout>
 )
 

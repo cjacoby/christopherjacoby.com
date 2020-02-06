@@ -28,12 +28,6 @@ const IndexPage = () => {
     </p>
 
     <h3>Data</h3>
-    <p>
-      <ul>
-        <li>Pescador</li>
-        <li>Manta?</li>
-      </ul>
-    </p>
 
     <h3>Publications</h3>
     <p>

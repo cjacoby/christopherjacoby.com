@@ -1,10 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
+import TagList from "../components/taglist"
 // import Image from "../components/image"
 import SEO from "../components/seo"
+import { Context } from "@emotion/stylis"
+
+const BlogPost = styled.div`
+  margin: 1em auto;
+`;
 
 
 const BlogPage = ( {data} ) => (
@@ -15,15 +22,14 @@ const BlogPage = ( {data} ) => (
           Blog
         </h1>
 
-      <h4>Posts</h4>
-      <p>
+        <h4>Posts</h4>
         {data.allSitePage.nodes.map(( {context} ) => (
-          <div>
+          <BlogPost>
             <Link to={`/` + context.postSlug}>{context.postTitle}</Link>
-            <p>Posted {context.postDate} by {context.postAuthor}</p>
-          </div>
+            <div>Posted {context.postDate} by {context.postAuthor}</div>
+            <TagList tags={context.postTags} />
+          </BlogPost>
         ))}
-      </p>
       </div>
     </Layout>
 )
@@ -40,15 +46,9 @@ query SiteMetadata {
         postTitle
         postAuthor
         postDate
+        postTags
       }
     }
   }
 }
 `
-
-// {JSON.stringify(data.allAirtable.edges, null, 4)}
-
-// ({ node }) => (
-//  <div>
-//  {node.context.postTitle}
-// </div>

@@ -40,6 +40,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             date
             slug
             title
+            Tags
           }
         }
       }
@@ -60,6 +61,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         postSlug: node.data.slug,
         postContent: node.data.PostMarkdown,
         postAuthor: node.data.author,
+        postTags: node.data.Tags
       },
     })
   })

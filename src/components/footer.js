@@ -6,7 +6,7 @@ const FooterContent = styled.div`
     padding: 26px 20px;
     width: 100%;
     display: flex;
-    align-items: ccenter;
+    align-items: center;
     margin: 0 auto;
 `;
 

@@ -2,13 +2,15 @@ import React from "react"
 // import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
+import TagList from "../components/taglist"
 import unified from 'unified';
 import markdown from 'remark-parse';
 import html from 'remark-html';
 
+
 // const Template
 
-export default ({ pageContext: { postTitle, postContent, postAuthor, postDate} }) => {
+export default ({ pageContext: { postTitle, postContent, postAuthor, postDate, postTags} }) => {
   return (
     <Layout>
       <div>
@@ -22,6 +24,7 @@ export default ({ pageContext: { postTitle, postContent, postAuthor, postDate} }
             {postDate}
             </span>
         </p>
+        <TagList tags={postTags} />
       </div>
       <div
         dangerouslySetInnerHTML={{

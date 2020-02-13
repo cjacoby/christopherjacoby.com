@@ -13,21 +13,31 @@ const NavHeader = styled.div`
   padding: 26px 20px;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0 auto;
+
+  > * {
+    flex: 1;
+    
+  }
 `;
 
 const NavLeft = styled.div`
   width: 50%;
   text-align: left;
+  order: 1;
 `;
 
 const NavRight = styled.div`
   width: 50%;
   text-align: right;
+  margin: 0 auto;
   svg {
     margin-right: 20px;
   }
+  order: 2;
 `;
 
 const MenuLink = styled(props => <Link {...props} />)`

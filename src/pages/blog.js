@@ -68,7 +68,7 @@ export default BlogPage
 
 export const query = graphql`
 query SiteMetadata {
-  allSitePage(filter: {context: {slug: {}}, isCreatedByStatefulCreatePages: {eq: false}}) {
+  allSitePage(filter: {path: {glob: "/blog/*"}}) {
     nodes {
       context {
         slug

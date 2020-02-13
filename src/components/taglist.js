@@ -1,5 +1,10 @@
 import React from "react"
 import styled from 'styled-components'
+import { navigate } from "@reach/router";
+import { css } from "@emotion/core"
+
+// Utilities
+import kebabCase from "lodash/kebabCase"
 
 const TagButton = styled.button`
   background: palevioletred;
@@ -10,13 +15,20 @@ const TagButton = styled.button`
 `;
 
 
-const TagList = ({ tags } ) => {
-    console.log(tags);
+const TagList = ({ tags }, clickable = false ) => {
     if (tags) {
        return (
          <div>Tags: {
             tags.map(( pageTag ) => (
-                <TagButton>{pageTag}</TagButton>
+                <TagButton
+                  onClick={
+                    clickable ? () => navigate(`/tags/${kebabCase(pageTag)}/`) : null}
+                  css={
+                    clickable? css`cursor: pointer;` : ``
+                  }
+                >
+                  {pageTag}
+                </TagButton>
             ))
          }</div>
        )

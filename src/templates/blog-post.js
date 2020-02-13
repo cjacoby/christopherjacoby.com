@@ -24,7 +24,7 @@ export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => 
             {date}
             </span>
         </p>
-        <TagList tags={Tags} />
+        <TagList tags={Tags} clickable={true}/>
       </div>
       <div
         dangerouslySetInnerHTML={{

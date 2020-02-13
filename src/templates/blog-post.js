@@ -10,28 +10,28 @@ import html from 'remark-html';
 
 // const Template
 
-export default ({ pageContext: { postTitle, postContent, postAuthor, postDate, postTags} }) => {
+export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => {
   return (
     <Layout>
       <div>
-        <h1>{postTitle}</h1>
-        <p>by {postAuthor} on {" "}
+        <h1>{title}</h1>
+        <p>by {author} on {" "}
             <span
                 css={css`
                   color: #bbb;
                 `}
             >
-            {postDate}
+            {date}
             </span>
         </p>
-        <TagList tags={postTags} />
+        <TagList tags={Tags} />
       </div>
       <div
         dangerouslySetInnerHTML={{
             __html: unified()
                 .use(markdown)
                 .use(html)
-                .processSync(postContent)
+                .processSync(PostMarkdown)
         }} />
     </Layout>
   )

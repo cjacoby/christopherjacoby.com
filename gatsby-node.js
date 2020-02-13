@@ -6,8 +6,45 @@
 
 // You can delete this file if you're not using it
 
+// Utilities
+const kebabCase = require(`lodash/kebabCase`)
+
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
+const queryToTagPageMap = (queryResult) => {
+  // get a dict of {
+  // tagName : post 
+  // }
+  let queryTags = queryResult.data.allAirtable.edges.map(({ node }) => {
+    if (node.data.Tags != null) {
+      return node.data.Tags.map(( tag ) => {
+        let result = {}
+        result[tag] = [node.data];
+        return result
+      });
+    }
+  })
+
+  let flatTags = queryTags.flat().filter((tag) => tag != null);
+  // console.log("Flat Tags: " + JSON.stringify(flatTags));
+
+  // return flatTags;
+  // Result is a dict of lists, keyed by tag.
+  return flatTags.reduce((acc, currentValue) => {
+    // console.log("Reduce: \n" + JSON.stringify(currentValue) + ", \n" + JSON.stringify(acc) + "\n");
+    for (const key in acc) {
+      if (key in currentValue) {
+        currentValue[key].push(acc[key]);
+        currentValue[key] = currentValue[key].flat();
+      } else {
+        currentValue[key] = acc[key];
+      }
+    }
+    return currentValue;
+  }, {});
+}
+
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   console.log(node.internal.type);
@@ -47,22 +84,51 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     }
   }
 `)
-  console.log("Airtable Result:");
-  console.log(JSON.stringify(result, null, 4))
+  // console.log("Airtable Result:");
+  // console.log(JSON.stringify(result, null, 4));
+
+  // Create blog pages
   result.data.allAirtable.edges.forEach(({ node }) => {
     createPage({
-      path: node.data.slug,
+      path: `/blog/${kebabCase(node.data.slug)}`,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        postTitle: node.data.title,
-        postDate: node.data.date,
-        postSlug: node.data.slug,
-        postContent: node.data.PostMarkdown,
-        postAuthor: node.data.author,
-        postTags: node.data.Tags
+        title: node.data.title,
+        date: node.data.date,
+        slug: node.data.slug,
+        PostMarkdown: node.data.PostMarkdown,
+        author: node.data.author,
+        Tags: node.data.Tags
       },
     })
+  })
+
+  // Create tag pages
+  const tagPageMap = queryToTagPageMap(result);
+  console.log("About to make some posts:");
+  console.log(JSON.stringify(tagPageMap, null, 4));
+  console.log("\n\n");
+
+  for (const tag in tagPageMap) {
+    console.log("Tag: " + tag);
+    createPage({
+      path: `/tags/${kebabCase(tag)}`,
+      component: path.resolve(`./src/templates/tag-posts.js`),
+      context: {
+        tag: tag,
+        posts: tagPageMap[tag]
+      }
+    })
+  }
+
+  // Finally, create a page for all the tags
+  createPage({
+    path: "/tags",
+    component: path.resolve(`./src/templates/tags.js`),
+    context: {
+      allTags: Object.keys(tagPageMap)
+    }
   })
 }

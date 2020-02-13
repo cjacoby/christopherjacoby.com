@@ -1,36 +1,65 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
-import styled from 'styled-components'
+import SEO from "../components/seo"
+import styled from 'styled-components';
+import { css } from "@emotion/core"
 
 import Layout from "../components/layout"
-import TagList from "../components/taglist"
-// import Image from "../components/image"
-import SEO from "../components/seo"
-import { Context } from "@emotion/stylis"
+import PostPreview from "../components/postpreview"
 
-const BlogPost = styled.div`
-  margin: 1em auto;
+
+const PageWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+
+  > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
 `;
+
+
+const PageSection = styled.article`
+margin: 1em;
+text-align: left;
+background: deepskyblue;
+`;
+
+const TagAside = styled.aside`
+background: hotpink;
+`;
+
 
 
 const BlogPage = ( {data} ) => (
     <Layout>
       <SEO title="Blog" />
-      <div>
-        <h1>
-          Blog
-        </h1>
+      <PageWrapper>
+        <header
+          css={css`
+            background: tomato;
+          `}
+        >
+          <h1>Blog</h1>
+        </header>
+        <div>
+          <h2>Recent Posts</h2>
+          <PageSection>
+            {data.allSitePage.nodes.map(( {context} ) => (
+              <PostPreview post={context}/>
+            ))}
+          </PageSection>
 
-        <h4>Posts</h4>
-        {data.allSitePage.nodes.map(( {context} ) => (
-          <BlogPost>
-            <Link to={`/` + context.postSlug}>{context.postTitle}</Link>
-            <div>Posted {context.postDate} by {context.postAuthor}</div>
-            <TagList tags={context.postTags} />
-          </BlogPost>
-        ))}
-      </div>
+          <h2>All Posts</h2>
+          <PageSection></PageSection>
+
+          <TagAside>
+            <h4>Tags</h4>
+          </TagAside>
+          
+        </div>
+      </PageWrapper>
     </Layout>
 )
 
@@ -39,14 +68,14 @@ export default BlogPage
 
 export const query = graphql`
 query SiteMetadata {
-  allSitePage(filter: {context: {postSlug: {}}, isCreatedByStatefulCreatePages: {eq: false}}) {
+  allSitePage(filter: {context: {slug: {}}, isCreatedByStatefulCreatePages: {eq: false}}) {
     nodes {
       context {
-        postSlug
-        postTitle
-        postAuthor
-        postDate
-        postTags
+        slug
+        title
+        author
+        date
+        Tags
       }
     }
   }

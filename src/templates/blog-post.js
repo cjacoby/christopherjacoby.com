@@ -8,8 +8,6 @@ import markdown from 'remark-parse';
 import html from 'remark-html';
 
 
-// const Template
-
 export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => {
   return (
     <Layout>
@@ -36,32 +34,3 @@ export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => 
     </Layout>
   )
 }
-
-// export const query = graphql`
-// query BlogPostFromAirtable {
-//     __typename
-//     sitePage {
-//       context {
-//         postTitle
-//         postAuthor
-//         postContent
-//         postSlug
-//       }
-//     }
-//   }  
-// `
-
-// query($slug: String!) {
-//     markdownRemark(frontmatter: { content: { eq: $PostMarkdown } }) {
-//       html
-//       frontmatter {
-//         title
-//       }
-//     }
-//   }
-
-
-// .frontmatter.title
-// {/* <p>{JSON.stringify(post)}</p>  */}
-// {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-// //   const post = data;  //.markdownRemark

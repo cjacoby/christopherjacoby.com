@@ -7,7 +7,7 @@ import { css } from "@emotion/core"
 import kebabCase from "lodash/kebabCase"
 
 const TagButton = styled.button`
-  background: palevioletred;
+  background: #00B31B;
   border-radius: 3px;
   border: none;
   color: white;
@@ -18,7 +18,7 @@ const TagButton = styled.button`
 const TagList = ({ tags }, clickable = false ) => {
     if (tags) {
        return (
-         <div>Tags: {
+         <div>{
             tags.map(( pageTag ) => (
                 <TagButton
                   onClick={

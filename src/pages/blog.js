@@ -11,7 +11,7 @@ import PostPreview from "../components/postpreview"
 const PageWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  text-align: center;
+  // text-align: center;
 
   > * {
     padding: 10px;
@@ -23,7 +23,7 @@ const PageWrapper = styled.div`
 const PageSection = styled.article`
 margin: 1em;
 text-align: left;
-background: deepskyblue;
+// background: deepskyblue;
 `;
 
 const TagAside = styled.aside`
@@ -37,26 +37,26 @@ const BlogPage = ( {data} ) => (
       <SEO title="Blog" />
       <PageWrapper>
         <header
-          css={css`
-            background: tomato;
-          `}
+          // css={css`
+          //   background: tomato;
+          // `}
         >
           <h1>Blog</h1>
         </header>
         <div>
-          <h2>Recent Posts</h2>
+          {/* <h2>Recent Posts</h2> */}
           <PageSection>
             {data.allSitePage.nodes.map(( {context} ) => (
               <PostPreview post={context}/>
             ))}
           </PageSection>
 
-          <h2>All Posts</h2>
-          <PageSection></PageSection>
+          {/* <h2>All Posts</h2>
+          <PageSection></PageSection> */}
 
-          <TagAside>
+          {/* <TagAside>
             <h4>Tags</h4>
-          </TagAside>
+          </TagAside> */}
           
         </div>
       </PageWrapper>

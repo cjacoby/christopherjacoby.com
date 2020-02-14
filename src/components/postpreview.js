@@ -8,55 +8,34 @@ import TagList from "./taglist"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
-const EqualDivider = styled.div`
-  display: flex;
-  margin: 0.5rem;
-  padding: 1rem;
-  background: papayawhip;
-  ${props => props.vertical && "flex-direction: column;"}
-
-  > * {
-    flex: 1;
-
-    &:not(:first-child) {
-      ${props => props.vertical ? "margin-top" : "margin-left"}: 1rem;
-    }
-  }
-`;
-
 const Child = styled.div`
-  padding: 0.25rem 0.5rem;
-  background: palevioletred;
+  // padding: 0.25rem 0.5rem;
+  // background: palevioletred;
 `;
 
 const BlogPost = styled.div`
   margin: 1em auto;
+  padding: 0.25em 0.5em;
   &:hover {
       cursor: pointer;
       background-color: palevioletred;
       color: white;
-      border-radius: 3px;
+      border-radius: .5em;
   }
 `;
 
 const PostContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:left;
-    align-content:left;
-`;
-
-const PostHeader = styled.div`
+    display: grid;
+    grid-template-columns: 70% auto;
 `;
 
 const PostTitle = styled.h3`
   display: inline;
-  padding: 0.25em;
   margin: auto;
 `;
 
 const PostMetadata = styled.div`
-
+  font-size: .8rem;
 `;
 
 const PostTags = styled.div`
@@ -70,10 +49,10 @@ const PostPreview = ( { post } ) => (
             navigate(`/blog/${kebabCase(post.slug)}`)
         }}
     >
-        <EqualDivider>
+        <PostContainer>
             <Child><PostTitle>{post.title}</PostTitle></Child>
             <Child><PostTags><TagList tags={post.Tags} /></PostTags></Child>
-        </EqualDivider>
+        </PostContainer>
         <PostMetadata>Posted {post.date} by {post.author}</PostMetadata>
     </BlogPost>  
 )

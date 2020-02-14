@@ -12,6 +12,8 @@ const kebabCase = require(`lodash/kebabCase`)
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const BUILDENV = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "production";
+
 const queryToTagPageMap = (queryResult) => {
   // get a dict of {
   // tagName : post 
@@ -47,7 +49,7 @@ const queryToTagPageMap = (queryResult) => {
 
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  console.log(node.internal.type);
+  // console.log(node.internal.type);
 //   const { createNodeField } = actions
 //   if (node.isCreatedByStatefulCreatePages) {
 //       console.log("Special page");
@@ -61,14 +63,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 //   }
 }
 
-exports.createPages = async ({ graphql, boundActionCreators }) => {
+exports.createPages = async ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  console.log("Creating Pages");
-  const { createPage } = boundActionCreators;
+
+  console.log(`Creating Pages in environment ${BUILDENV}`);
+  const publishStatusList = BUILDENV === "development" ? `["publish", "draft"]` : `["publish"]`;
+  console.log(`publish_status: ${publishStatusList}`)
+
+  const { createPage } = actions;
   const result = await graphql(`
   {
-    allAirtable(sort: {fields: data___date}, filter: {data: {publish_status: {eq: "publish"}}}) {
+    allAirtable(sort: {fields: data___date}, filter: {data: {publish_status: {in: ${publishStatusList}}}}) {
       edges {
         node {
           data {
@@ -107,9 +113,9 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   // Create tag pages
   const tagPageMap = queryToTagPageMap(result);
-  console.log("About to make some posts:");
-  console.log(JSON.stringify(tagPageMap, null, 4));
-  console.log("\n\n");
+  // console.log("About to make some posts:");
+  // console.log(JSON.stringify(tagPageMap, null, 4));
+  // console.log("\n\n");
 
   for (const tag in tagPageMap) {
     console.log("Tag: " + tag);

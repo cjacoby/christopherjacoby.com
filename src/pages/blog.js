@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import styled from 'styled-components';
-import { css } from "@emotion/core"
+// import { css } from "@emotion/core"
 
 import Layout from "../components/layout"
 import PostPreview from "../components/postpreview"
@@ -26,9 +26,9 @@ text-align: left;
 // background: deepskyblue;
 `;
 
-const TagAside = styled.aside`
-background: hotpink;
-`;
+// const TagAside = styled.aside`
+// background: hotpink;
+// `;
 
 
 
@@ -46,7 +46,7 @@ const BlogPage = ( {data} ) => (
         <div>
           {/* <h2>Recent Posts</h2> */}
           <PageSection>
-            {data.allSitePage.nodes.map(( {context} ) => (
+            {data.allSitePage.nodes.reverse().map(( {context} ) => (
               <PostPreview post={context}/>
             ))}
           </PageSection>

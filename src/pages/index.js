@@ -63,8 +63,7 @@ const IndexPage = ({ data }) => {
         <ul css={css`
           list-style: none;
         `}>
-          <li><a>LinkedIn</a></li>
-          <li><a>Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/christopherjacoby/">LinkedIn</a></li>
           <li><a href="https://twitter.com/chrstphrjcby">twitter</a></li>
         </ul>
       </RightBarChild>

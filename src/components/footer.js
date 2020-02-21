@@ -8,6 +8,8 @@ const FooterContent = styled.div`
     align-items: center;
     margin: 0 auto;
     text-align: center;
+    font-size: .7em;
+    font-style: italic;
 `;
 
 const Footer = () => (

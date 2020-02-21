@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import styled from 'styled-components';
-// import { css } from "@emotion/core"
+import { css } from "@emotion/core"
 
 import Layout from "../components/layout"
 import PostPreview from "../components/postpreview"
@@ -37,9 +37,9 @@ const BlogPage = ( {data} ) => (
       <SEO title="Blog" />
       <PageWrapper>
         <header
-          // css={css`
-          //   background: tomato;
-          // `}
+          css={css`
+            text-align: center;
+          `}
         >
           <h1>Blog</h1>
         </header>

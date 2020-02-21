@@ -1,5 +1,6 @@
 import React from "react"
 // import { Link } from "gatsby"
+import { css } from "@emotion/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +9,13 @@ import SEO from "../components/seo"
 const MusicPage = () => (
     <Layout>
       <SEO title="Music" />
+      <header
+          css={css`
+            text-align: center;
+          `}
+        >
+          <h1>Music</h1>
+        </header>
       {/* <ul> */}
         {/* <LinkButton to="/music/compositions/">Compositions</LinkButton> */}
         {/* <LinkButton to="/music/tunes/">Tunes</LinkButton> */}

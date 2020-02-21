@@ -1,7 +1,9 @@
 import React from "react"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import styled from 'styled-components';
 import { css } from "@emotion/core"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,8 +12,6 @@ import SEO from "../components/seo"
 const Container = styled.div`
 display: grid;
 grid-template-columns: 70% auto;
-
-}
 `;
 
 const ContentChild = styled.div`
@@ -19,6 +19,7 @@ const ContentChild = styled.div`
 `;
 
 const RightBarChild = styled.div`
+  margin: auto;
 `;
 
 
@@ -26,8 +27,6 @@ const IndexPage = ({ data }) => {
   return (
   <Layout>
     <SEO title="Home" />
-
-    {/* <Img fixed={data.headshotImage.childImageSharp.fixed} /> */}
 
     <Container>
       <ContentChild>
@@ -60,12 +59,15 @@ const IndexPage = ({ data }) => {
         </article> */}
       </ContentChild>
       <RightBarChild>
-        <ul css={css`
-          list-style: none;
-        `}>
-          <li><a href="https://www.linkedin.com/in/christopherjacoby/">LinkedIn</a></li>
-          <li><a href="https://twitter.com/chrstphrjcby">twitter</a></li>
-        </ul>
+        <Img fixed={data.headshotImage.childImageSharp.fixed}/>
+        <br />
+
+        <p>
+          <a href="https://www.linkedin.com/in/christopherjacoby/"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+          {" "}
+          <a href="https://twitter.com/chrstphrjcby"><FontAwesomeIcon icon={faTwitter} /></a>
+        </p>
+        
       </RightBarChild>
     </Container>
 
@@ -85,16 +87,20 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
-// export const query = graphql`
-//   query {
-//     headshotImage: file(relativePath: { eq: "cbj.jpeg" }) {
-//       childImageSharp {
-//         # Specify the image processing specifications right in the query.
-//         # Makes it trivial to update as your page's design changes.
-//         fixed(width: 125, height: 125) {
-//           ...GatsbyImageSharpFixed
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    headshotImage: file(relativePath: { eq: "cbj-headshot.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 125, height: 125) {
+          base64
+          width
+          height
+          src
+          srcSet
+        }
+      }
+    }
+  }
+`

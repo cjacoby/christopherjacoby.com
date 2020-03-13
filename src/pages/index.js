@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
           </p>
           <p>
             I have a Masters in Music Technology from NYU / Steinhardt, where I worked in the <a href="https://research.steinhardt.nyu.edu/marl/">Music & Audio Research Laboratory (MARL)</a> with <a href="https://wp.nyu.edu/jpbello/">Juan Bello</a>.
-            I am currently a Senior Data Scientist in Change Healthcare's Artificial Intelligence team. Prior to that
+            I am currently a Senior Data Scientist in Change Healthcare's Artificial Intelligence group. Prior to that
             I worked for a series of Music Techology startups.
           </p>
         </article>

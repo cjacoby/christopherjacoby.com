@@ -15,6 +15,10 @@ module.exports = {
       {
         name:'music',
         link:'/music'
+      },
+      {
+        name:'services',
+        link:'/services'
       }
     ]
   },

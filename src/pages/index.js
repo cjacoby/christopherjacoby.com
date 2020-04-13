@@ -1,7 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from 'styled-components';
-import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
@@ -32,8 +31,7 @@ const IndexPage = ({ data }) => {
       <ContentChild>
         <article>
           <p>
-            I am a Machine Learning Engineer with particular interests in Audio & Music,
-            and how computers can help us be more human.
+            I am a Machine Learning Engineer / Data Scientist with interests in Audio & Music Information Retrieval, and NLP.
           </p>
           <p>
             I have a Masters in Music Technology from NYU / Steinhardt, where I worked in the <a href="https://research.steinhardt.nyu.edu/marl/">Music & Audio Research Laboratory (MARL)</a> with <a href="https://wp.nyu.edu/jpbello/">Juan Bello</a>.

@@ -7,11 +7,11 @@ import { css } from "@emotion/core"
 import kebabCase from "lodash/kebabCase"
 
 const TagButton = styled.button`
-  background: #00B31B;
+  background: #4DB3AB;
   border-radius: 3px;
   border: none;
   color: white;
-  margin: auto 5px;
+  margin: auto 2px;
 `;
 
 

@@ -6,11 +6,13 @@ import TagList from "../components/taglist"
 import unified from 'unified';
 import markdown from 'remark-parse';
 import html from 'remark-html';
+import SEO from "../components/seo"
 
 
 export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => {
   return (
     <Layout>
+      <SEO title={title} />
       <div>
         <h1>{title}</h1>
         <p>by {author} on {" "}

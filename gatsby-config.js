@@ -16,10 +16,10 @@ module.exports = {
         name:'music',
         link:'/music'
       },
-      {
-        name:'services',
-        link:'/services'
-      }
+      // {
+      //   name:'services',
+      //   link:'/services'
+      // }
     ]
   },
   plugins: [
@@ -71,7 +71,13 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-163775948-1",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

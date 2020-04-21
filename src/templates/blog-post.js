@@ -1,5 +1,6 @@
 import React from "react"
 // import { graphql } from "gatsby"
+import styled from 'styled-components'
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import TagList from "../components/taglist"
@@ -8,23 +9,52 @@ import markdown from 'remark-parse';
 import html from 'remark-html';
 import SEO from "../components/seo"
 
+const PostHeader = styled.div`
+  // display: grid;
+  // grid-template-columns: 70% auto;
+`;
+
+const PostTitle = styled.h1`
+`;
+
+const PostHeaderContainer = styled.div`
+  margin: .5em auto;
+  font-size: .8em;
+  // display: flex;
+  // justify-self: end;
+  // display: grid;
+  // grid-template-rows: auto auto;
+  // justify-items: stretch;
+`;
+
+const PostMetadata = styled.div`
+// text-align: right;
+`;
+ 
+const PostTags = styled.div`
+  align-self: 
+  margin: auto;
+`;
+
 
 export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => {
   return (
     <Layout>
       <SEO title={title} />
       <div>
-        <h1>{title}</h1>
-        <p>by {author} on {" "}
-            <span
-                css={css`
-                  color: #bbb;
-                `}
-            >
-            {date}
-            </span>
-        </p>
-        <TagList tags={Tags} clickable={true}/>
+        <PostHeader>
+          <PostTitle>{title}</PostTitle>
+          <PostHeaderContainer>
+            by {author} on {" "}<span
+                  css={css`
+                    color: #bbb;
+                  `}
+              >
+                {date}
+              </span>
+            | <TagList tags={Tags} clickable={true}/>
+          </PostHeaderContainer>
+        </PostHeader>
       </div>
       <div
         dangerouslySetInnerHTML={{

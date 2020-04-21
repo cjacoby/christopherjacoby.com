@@ -18,7 +18,7 @@ const BlogPost = styled.div`
   padding: 0.25em 0.5em;
   &:hover {
       cursor: pointer;
-      background-color: palevioletred;
+      background-color: rgba(216, 112, 99, 0.5);  // "#D87093? / palevioletred
       color: white;
       border-radius: .5em;
   }

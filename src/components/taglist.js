@@ -6,6 +6,10 @@ import { css } from "@emotion/core"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
+const TagDiv = styled.div`
+  display: inline-block;
+`;
+
 const TagButton = styled.button`
   background: #4DB3AB;
   border-radius: 3px;
@@ -18,7 +22,7 @@ const TagButton = styled.button`
 const TagList = ({ tags }, clickable = false ) => {
     if (tags) {
        return (
-         <div>{
+         <TagDiv>{
             tags.map(( pageTag ) => (
                 <TagButton
                   onClick={
@@ -30,11 +34,11 @@ const TagList = ({ tags }, clickable = false ) => {
                   {pageTag}
                 </TagButton>
             ))
-         }</div>
+         }</TagDiv>
        )
     }
     else {
-        return <div>Tags: (none)</div>
+        return <TagDiv>Tags: (none)</TagDiv>
     }
  }
 

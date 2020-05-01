@@ -2,11 +2,15 @@ import React from "react"
 import Img from "gatsby-image"
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+// fix fontawesome svgs from flashing big
+config.autoAddCss = false
 
 const Container = styled.div`
 display: grid;

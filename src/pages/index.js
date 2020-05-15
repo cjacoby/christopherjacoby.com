@@ -8,6 +8,7 @@ import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostPreview from "../components/postpreview"
 
 // fix fontawesome svgs from flashing big
 config.autoAddCss = false
@@ -27,6 +28,9 @@ const RightBarChild = styled.div`
 
 
 const IndexPage = ({ data }) => {
+  const blogPosts = data.allSitePage.nodes.reverse();
+  const postedBlogPosts = blogPosts.filter(({context}) => context.date !== null);
+
   return (
   <Layout>
     <SEO title="Home" />
@@ -44,12 +48,19 @@ const IndexPage = ({ data }) => {
           </p>
         </article>
 
-        {/* <article>
+        <article>
           <h3>Recent Posts</h3>
+          {postedBlogPosts.map(({context}) => (
+            <PostPreview post={context} />
+          ))}
+        </article>
+
+        <article>
+          <h3>Upcoming Gigs</h3>
           <p>
-            blah blah
+            Unfortunately, due to Covit-19, all current scheduled gigs are likely to be cancelled.
           </p>
-        </article> */}
+        </article>
 
         {/* <article>
           <h3>Software</h3>
@@ -101,6 +112,17 @@ export const query = graphql`
           height
           src
           srcSet
+        }
+      }
+    }
+    allSitePage(filter: {path: {glob: "/blog/*"}}) {
+      nodes {
+        context {
+          slug
+          title
+          author
+          date
+          Tags
         }
       }
     }

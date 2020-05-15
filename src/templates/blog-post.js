@@ -27,15 +27,6 @@ const PostHeaderContainer = styled.div`
   // justify-items: stretch;
 `;
 
-const PostMetadata = styled.div`
-// text-align: right;
-`;
- 
-const PostTags = styled.div`
-  align-self: 
-  margin: auto;
-`;
-
 
 export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => {
   return (

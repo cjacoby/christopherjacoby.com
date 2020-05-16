@@ -1,0 +1,16 @@
+.gridcontainer {
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+.contentchild {
+    padding: 0.25rem 0.5rem;
+}
+
+.contentchild ul {
+    list-style-type: none;
+}
+
+.rightchild {
+    margin: 0 auto;
+}

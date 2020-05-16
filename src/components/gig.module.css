@@ -1,0 +1,21 @@
+.gig {
+    background-color: rgba(66, 21, 21, 0.24);
+    border-radius: .25em;
+    padding: .25em .5em;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.date {
+
+}
+
+.venue {
+
+}
+
+.meta {
+    font-size: smaller;
+}

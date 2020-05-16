@@ -69,6 +69,11 @@ module.exports = {
           {
             baseId: `applfOP9Jlzf5Oaqf`,
             tableName: `CMS`
+          },
+          {
+            baseId: `applfOP9Jlzf5Oaqf`,
+            tableName: `Gigs`,
+            tableView: `Future Gigs`
           }
         ]
       }

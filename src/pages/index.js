@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
         <div>
           <h3>Upcoming Gigs</h3>
           <p>
-            Unfortunately, due to Covit-19, all current scheduled gigs are likely to be cancelled.
+            Unfortunately, due to Covid-19, all current scheduled gigs are likely to be cancelled.
           </p>
         </div>
 

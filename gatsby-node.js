@@ -67,9 +67,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
 
-  console.log(`Creating Pages in environment ${BUILDENV}`);
+  // console.log(`Creating Pages in environment ${BUILDENV}`);
   const publishStatusList = BUILDENV === "development" ? `["publish", "draft"]` : `["publish"]`;
-  console.log(`publish_status: ${publishStatusList}`)
+  // console.log(`publish_status: ${publishStatusList}`)
 
   const { createPage } = actions;
   const result = await graphql(`
@@ -118,7 +118,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // console.log("\n\n");
 
   for (const tag in tagPageMap) {
-    console.log("Tag: " + tag);
+    // console.log("Tag: " + tag);
     createPage({
       path: `/tags/${kebabCase(tag)}`,
       component: path.resolve(`./src/templates/tag-posts.js`),

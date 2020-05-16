@@ -32,7 +32,9 @@ text-align: left;
 
 
 
-const BlogPage = ( {data} ) => (
+const BlogPage = ( {data} ) => {
+  const posts = data.allSitePage.nodes;
+  return (
     <Layout>
       <SEO title="Blog" />
       <PageWrapper>
@@ -46,7 +48,7 @@ const BlogPage = ( {data} ) => (
         <div>
           {/* <h2>Recent Posts</h2> */}
           <PageSection>
-            {data.allSitePage.nodes.reverse().map(( {context} ) => (
+            {posts.map(( {context} ) => (
               <PostPreview post={context}/>
             ))}
           </PageSection>
@@ -61,7 +63,7 @@ const BlogPage = ( {data} ) => (
         </div>
       </PageWrapper>
     </Layout>
-)
+)}
 
 
 export default BlogPage

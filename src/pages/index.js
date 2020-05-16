@@ -1,30 +1,19 @@
 import React from "react"
+
+import Layout from "../components/layout"
+import styles from "./index.module.css"
+
 import Img from "gatsby-image"
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostPreview from "../components/postpreview"
 
 // fix fontawesome svgs from flashing big
 config.autoAddCss = false
-
-const Container = styled.div`
-display: grid;
-grid-template-columns: 70% auto;
-`;
-
-const ContentChild = styled.div`
-  padding: 0.25rem 0.5rem;
-`;
-
-const RightBarChild = styled.div`
-  margin: auto;
-`;
 
 
 const IndexPage = ({ data }) => {
@@ -35,8 +24,8 @@ const IndexPage = ({ data }) => {
   <Layout>
     <SEO title="Home" />
 
-    <Container>
-      <ContentChild>
+    <div className={styles.gridcontainer}>
+      <div className={styles.contentchild}>
         <article>
           <p>
             I am a Machine Learning Engineer / Data Scientist with interests in Audio & Music Information Retrieval, and NLP.
@@ -55,12 +44,14 @@ const IndexPage = ({ data }) => {
           ))}
         </article>
 
-        <article>
+        <hr />
+
+        <div>
           <h3>Upcoming Gigs</h3>
           <p>
             Unfortunately, due to Covit-19, all current scheduled gigs are likely to be cancelled.
           </p>
-        </article>
+        </div>
 
         {/* <article>
           <h3>Software</h3>
@@ -70,8 +61,8 @@ const IndexPage = ({ data }) => {
             </ul>
           </p>
         </article> */}
-      </ContentChild>
-      <RightBarChild>
+      </div>
+      <div className={styles.rightchild}>
         <Img fixed={data.headshotImage.childImageSharp.fixed}/>
         <br />
 
@@ -81,18 +72,8 @@ const IndexPage = ({ data }) => {
           <a href="https://twitter.com/chrstphrjcby"><FontAwesomeIcon icon={faTwitter} /></a>
         </p>
         
-      </RightBarChild>
-    </Container>
-
-    {/* <h3>Data</h3> */}
-
-    {/* <h3>Publications</h3>
-    <p>
-      <ul>
-        <li>Few papers</li>
-      </ul>
-    </p> */}
-
+      </div>
+    </div>
   </Layout>
   )
 }

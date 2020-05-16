@@ -1,0 +1,32 @@
+.blogpost {
+    margin: 1em auto;
+    padding: 0.25em 0.5em;
+    background-color: rgba(163, 30, 30, 0.411);  /*// "#D87093? / palevioletred*/
+    border-radius: .5em;
+}
+
+.blogpost:hover {
+    cursor: pointer;
+    background-color: rgba(230, 135, 123, 0.575);  /*// "#D87093? / palevioletred*/
+    color: white;
+    border-radius: .5em;
+}
+
+.title {
+   display: inline;
+   margin: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+.metadata {
+    font-size: .8rem;
+}
+
+.tags {
+    margin: auto;
+    text-align: right;
+}

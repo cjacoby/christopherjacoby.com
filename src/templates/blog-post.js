@@ -1,8 +1,9 @@
 import React from "react"
 // import { graphql } from "gatsby"
+import Layout from "../components/layout"
+
 import styled from 'styled-components'
 import { css } from "@emotion/core"
-import Layout from "../components/layout"
 import TagList from "../components/taglist"
 import unified from 'unified';
 import markdown from 'remark-parse';
@@ -47,6 +48,10 @@ export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => 
           </PostHeaderContainer>
         </PostHeader>
       </div>
+      <hr css={css`
+        margin-top: 1rem;
+      `}
+      />
       <div
         dangerouslySetInnerHTML={{
             __html: unified()

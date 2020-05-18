@@ -17,8 +17,11 @@ config.autoAddCss = false
 
 
 const IndexPage = ({ data }) => {
-  const blogPosts = data.allSitePage.nodes.reverse();
-  const postedBlogPosts = blogPosts.filter(({context}) => context.date !== null);
+  let blogPosts = data.allSitePage.nodes.reverse();
+  if (blogPosts.length > 3) {
+    blogPosts = blogPosts.slice(0, 3);
+  }
+  // const postedBlogPosts = blogPosts.filter(({context}) => context.date !== null);
 
   return (
   <Layout>
@@ -39,7 +42,7 @@ const IndexPage = ({ data }) => {
 
         <article>
           <h3>Recent Posts</h3>
-          {postedBlogPosts.map(({context}) => (
+          {blogPosts.map(({context}) => (
             <PostPreview post={context} />
           ))}
         </article>

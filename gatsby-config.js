@@ -1,3 +1,6 @@
+// Initialize dotenv
+require('dotenv').config({path: `.env`});
+
 module.exports = {
   siteMetadata: {
     title: `christopherjacoby.com`,
@@ -15,11 +18,7 @@ module.exports = {
       {
         name:'music',
         link:'/music'
-      },
-      // {
-      //   name:'services',
-      //   link:'/services'
-      // }
+      }
     ]
   },
   plugins: [
@@ -41,20 +40,20 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
     `gatsby-plugin-emotion`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -84,6 +83,12 @@ module.exports = {
         trackingId: "UA-163775948-1",
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.S3_BUCKET,
+      },
+    }
     // `gatsby-plugin-feed`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

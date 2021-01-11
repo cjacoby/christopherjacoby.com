@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import styles from "./index.module.css"
@@ -31,12 +32,11 @@ const IndexPage = ({ data }) => {
       <div className={styles.contentchild}>
         <article>
           <p>
-            I am a Machine Learning Engineer / Data Scientist with interests in Audio & Music Information Retrieval, and NLP.
+            I am a Machine Learning Engineer / Data Scientist specializing in Audio & Music Information Retrieval.
           </p>
           <p>
             I have a Masters in Music Technology from NYU / Steinhardt, where I worked in the <a href="https://research.steinhardt.nyu.edu/marl/">Music & Audio Research Laboratory (MARL)</a> with <a href="https://wp.nyu.edu/jpbello/">Juan Bello</a>.
-            I am currently a Senior Data Scientist in Change Healthcare's Artificial Intelligence group. Prior to that
-            I worked for a series of Music Techology startups.
+            I am a currently Senior Machine Learning Engineer at Antares Audio Technologies.
           </p>
         </article>
 
@@ -49,12 +49,12 @@ const IndexPage = ({ data }) => {
 
         <hr />
 
-        <div>
+        {/* <div>
           <h3>Upcoming Gigs</h3>
           <p>
             Unfortunately, due to Covid-19, all current scheduled gigs are likely to be cancelled.
           </p>
-        </div>
+        </div> */}
 
         {/* <article>
           <h3>Software</h3>

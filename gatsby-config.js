@@ -15,10 +15,10 @@ module.exports = {
         name:'blog',
         link:'/blog'
       },
-      {
-        name:'music',
-        link:'/music'
-      }
+      // {
+      //   name:'music',
+      //   link:'/music'
+      // }
     ]
   },
   plugins: [
@@ -43,16 +43,11 @@ module.exports = {
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              
-            }
-          }
-        ]
-      }
+      // options: {
+      //   plugins: [
+      //     `gatsby-remark-prismjs`
+      //   ]
+      // }
     },
     {
       resolve: `gatsby-plugin-typography`,

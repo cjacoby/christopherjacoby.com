@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Layout from "../components/layout"
@@ -8,7 +9,7 @@ import Gig from "../components/gig"
 import SEO from "../components/seo"
 
 const MusicPage = ( {data} ) => {
-  const gigs = data.allAirtable.nodes;
+  // const gigs = data.allAirtable.nodes;
   // .sort((a, b) => {
   //   if (a === b) {
   //     return 0;
@@ -23,7 +24,7 @@ const MusicPage = ( {data} ) => {
   //   return keyA > keyB ? 1 : -1;
     
   // });
-  console.log(gigs);
+  // console.log(gigs);
 
   return (
     <Layout>
@@ -37,14 +38,14 @@ const MusicPage = ( {data} ) => {
         </header>
       <div className={styles.gridcontainer}>
         <div className={styles.contentchild}>
-          <h3>Upcoming Gigs</h3>
+        {/*   <h3>Upcoming Gigs</h3>
           <div>
             <ul>
               {gigs.map(({data}) => (
                 <li><Gig {...data} /></li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
         </div> {/* end content child */}
 
@@ -85,28 +86,28 @@ const MusicPage = ( {data} ) => {
 export default MusicPage
 
 
-export const query = graphql`
-query GigQuery {
-  __typename
-  allAirtable(filter: {table: {eq: "Gigs"}}, sort: {fields:data___Date, order:ASC}) {
-    edges {
-      node {
-        id
-      }
-    }
-    nodes {
-      data {
-        Band
-        Date
-        Location
-        Name
-        Venue
-        URL
-      }
-    }
-  }
-}
-`;
+// export const query = graphql`
+// query GigQuery {
+//   __typename
+//   allAirtable(filter: {table: {eq: "Gigs"}}) {
+//     edges {
+//       node {
+//         id
+//       }
+//     }
+//     nodes {
+//       data {
+//         Band
+//         Date
+//         Location
+//         Name
+//         Venue
+//         URL
+//       }
+//     }
+//   }
+// }
+// `;
 
 // {/* <ul> */}
 //         {/* <LinkButton to="/music/compositions/">Compositions</LinkButton> */}

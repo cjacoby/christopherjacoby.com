@@ -1,5 +1,4 @@
 import React from "react"
-// import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 import styled from 'styled-components'
@@ -7,8 +6,13 @@ import { css } from "@emotion/core"
 import TagList from "../components/taglist"
 import unified from 'unified';
 import markdown from 'remark-parse';
-import html from 'remark-html';
+// import html from 'remark-html';
+import html from 'rehype-stringify';
+import toc from 'remark-toc';
 import SEO from "../components/seo"
+
+import rehypePrism from "rehype-prism";
+import remark2rehype from "remark-rehype";
 
 const PostHeader = styled.div`
   // display: grid;
@@ -55,8 +59,16 @@ export default ({ pageContext: { title, PostMarkdown, author, date, Tags} }) => 
       <div
         dangerouslySetInnerHTML={{
             __html: unified()
+                // Transform markdown into a markdown syntax tree
                 .use(markdown)
+                .use(toc)
+                // Transform markdown syntax tree to html syntax tree
+                .use(remark2rehype)
+                // Traverse html syntax tree to apply code highlighting to content within code tags
+                .use(rehypePrism)
+                // Transform html syntax tree to string to send to the client
                 .use(html)
+                // Apply all this to the PostMarkdown data
                 .processSync(PostMarkdown)
         }} />
     </Layout>

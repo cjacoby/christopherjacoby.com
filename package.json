@@ -42,7 +42,7 @@
     "rehype-prism": "^0.1.1",
     "rehype-react": "^5.0.1",
     "rehype-stringify": "^7.0.0",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "remark-parse": "^7.0.2",
     "remark-rehype": "^7.0.0",
     "remark-toc": "^7.0.0",

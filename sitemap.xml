@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/markdown/2020/01/14/test-markdown-post.html</loc>
-<lastmod>2020-01-14T00:00:00-06:00</lastmod>
-</url>
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/jupyter/2020/02/20/test.html</loc>
-<lastmod>2020-02-20T00:00:00-06:00</lastmod>
-</url>
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/about/</loc>
-</url>
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/</loc>
-</url>
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/search/</loc>
-</url>
-<url>
-<loc>https://cjacoby.github.io/christopherjacoby-blog/categories/</loc>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/about.html</loc>
+    <lastmod>2022-09-18T22:33:45.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/posts/2021-10-11-scale-transform-x.html</loc>
+    <lastmod>2022-09-18T22:26:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/posts/2020-02-20-test.html</loc>
+    <lastmod>2022-09-18T22:35:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/posts/post-with-code/index.html</loc>
+    <lastmod>2022-09-18T22:19:12.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/posts/welcome/index.html</loc>
+    <lastmod>2022-09-18T22:19:12.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/posts/2020-01-14-test-markdown-post.html</loc>
+    <lastmod>2022-09-18T22:26:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cjacoby.github.io/christopherjacoby-blog/index.html</loc>
+    <lastmod>2022-09-18T22:35:57.000Z</lastmod>
+  </url>
 </urlset>

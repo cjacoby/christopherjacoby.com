@@ -1,1 +1,1 @@
-Sitemap: https://cjacoby.github.io/christopherjacoby-blog/sitemap.xml
+Sitemap: https://christopherjacoby.com/sitemap.xml

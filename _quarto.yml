@@ -5,14 +5,15 @@ execute:
   freeze: auto
 
 website:
-  title: "christopherjacoby-blog"
-  navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com/chrstphrjcby
+  title: "christopher jacoby .com"
+  # navbar:
+  # right:
+  # - about.qmd
+  # - blog.qmd
+  # - icon: github
+  #   href: https://github.com/
+  # - icon: twitter
+  #   href: https://twitter.com/chrstphrjcby
 format:
   html:
     theme: cyborg

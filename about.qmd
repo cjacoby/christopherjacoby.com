@@ -13,8 +13,12 @@ about:
     - icon: github
       text: Github
       href: https://github.com/cjacoby
-
 ---
 
-About this blog
+I am a Staff Research Engineer at Antares Audio Technologies, a musician, hobbyist baker, and coffee enthusiast.
 
+I'm interested in:
+
+- Deep Learning on Audio Signals (especially singing & the human voice)
+- How to craft the context for high performing *research* teams / organizations.
+- Facilitating experiences that connect each other as whole humans.

@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "I am a Staff Research Engineer at Antares Audio Technologies, a musician, hobbyist baker, and coffee enthusiast.\nI’m interested in:\n\nDeep Learning on Audio Signals (especially singing & the human voice)\nHow to craft the context for high performing research teams / organizations.\nFacilitating experiences that connect each other as whole humans."
   },
   {
-    "objectID": "posts/2021-10-11-scale-transform-x.html",
-    "href": "posts/2021-10-11-scale-transform-x.html",
-    "title": "Scale TransformX 2021",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "This past week, I attended (virtually) Scale TransformX, my second.\n\nTalks"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "posts/2020-02-20-test.html",
@@ -91,20 +91,6 @@
     "text": "Footnotes\nYou can have footnotes in notebooks, however the syntax is different compared to markdown documents. This guide provides more detail about this syntax, which looks like this:\n{% raw %}For example, here is a footnote {% fn 1 %}.\nAnd another {% fn 2 %}\n{{ 'This is the footnote.' | fndetail: 1 }}\n{{ 'This is the other footnote. You can even have a [link](www.github.com)!' | fndetail: 2 }}{% endraw %}\nFor example, here is a footnote {% fn 1 %}.\nAnd another {% fn 2 %}\n{{ ‘This is the footnote.’ | fndetail: 1 }} {{ ‘This is the other footnote. You can even have a link!’ | fndetail: 2 }}"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/2020-01-14-test-markdown-post.html",
     "href": "posts/2020-01-14-test-markdown-post.html",
     "title": "An Example Markdown Post",
@@ -171,6 +157,27 @@
     "objectID": "index.html",
     "href": "index.html",
     "title": "Christopher Jacoby",
+    "section": "",
+    "text": "I am a Staff Research Engineer at Antares Audio Technologies, as well as: husband, father, musician, hobbyist baker, and coffee enthusiast.\nLately, I’m curious about:\n\nDeep Learning on Audio Signals (especially singing & the human voice)\nCrafting the context for high performing research teams / organizations.\nAgile / Agility / Scrum / etc.\nFacilitating experiences that connect each other as whole humans.\n\nIf you’d like to connect or chat about any of these, please reach out!"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/2021-10-11-scale-transform-x.html",
+    "href": "posts/2021-10-11-scale-transform-x.html",
+    "title": "Scale TransformX 2021",
+    "section": "",
+    "text": "This past week, I attended (virtually) Scale TransformX, my second.\n\nTalks"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
     "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nScale TransformX 2021\n\n\n\nconferences\n\n\n\nNotes & Highlights from Scale TransformX\n\n\n\n\n\nOct 11, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nFastpages Notebook Blog Post\n\n\n\njupyter\n\n\n\nA tutorial of fastpages for Jupyter notebooks.\n\n\n\n\n\nFeb 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nAn Example Markdown Post\n\n\n\nmarkdown\n\n\n\nA minimal example of using markdown with fastpages.\n\n\n\n\n\nJan 14, 2020\n\n\n\n\n\nNo matching items"
   }

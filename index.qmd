@@ -3,7 +3,7 @@ title: "Christopher Jacoby"
 ---
 
 ::: {.column-margin}
-![](20210507-PORTRAIT.jpg)
+![](20210507-PORTRAIT.jpg){style="border-radius: 10%"}
 :::
 
 I am a Staff Research Engineer at Antares Audio Technologies, as well as: husband, father, musician, hobbyist baker, and coffee enthusiast.

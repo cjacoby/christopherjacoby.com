@@ -1,5 +1,7 @@
 # christopherjacoby-blog
 
+published to: https://cjacoby.github.io/christopherjacoby-blog/
+
 ## Previewing
 
 ```

@@ -1,6 +1,7 @@
 *.swp
 ~*
 *~
+.*
 _site
 .sass-cache
 .jekyll-cache
@@ -12,3 +13,7 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 __pycache__
+
+/.quarto/
+
+**/*.quarto_ipynb

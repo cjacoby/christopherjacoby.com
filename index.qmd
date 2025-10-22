@@ -1,0 +1,18 @@
+---
+title: "Christopher Jacoby"
+---
+
+::: {.column-margin}
+![](20210507-PORTRAIT.jpg)
+:::
+
+I am a Staff Research Engineer at Antares Audio Technologies, as well as: husband, father, musician, hobbyist baker, and coffee enthusiast.
+
+Lately, I'm curious about:
+
+- Deep Learning on Audio Signals (especially singing & the human voice)
+- Crafting the context for high performing *research* teams / organizations.
+- Agile / Agility / Scrum / etc.
+- Facilitating experiences that connect each other as whole humans.
+
+If you'd like to connect or chat about any of these, please reach out!

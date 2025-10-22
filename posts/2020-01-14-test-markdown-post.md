@@ -1,10 +1,16 @@
 ---
-toc: true
-layout: post
+aliases:
+- /markdown/2020/01/14/test-markdown-post
+categories:
+- markdown
+date: '2020-01-14'
 description: A minimal example of using markdown with fastpages.
-categories: [markdown]
+layout: post
 title: An Example Markdown Post
+toc: true
+
 ---
+
 # Example Markdown Post
 
 ## Basic setup

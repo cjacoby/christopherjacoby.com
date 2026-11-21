@@ -6,7 +6,7 @@ title: "Christopher Jacoby"
 ![](20210507-PORTRAIT.jpg){style="border-radius: 10%"}
 :::
 
-I am a Senior Research Engineer at Spotify at the Artist First AI Music Lab.
+I am a Senior Research Engineer at Spotify at the [Artist First AI Music Lab](https://newsroom.spotify.com/2025-10-16/artist-first-ai-music-spotify-collaboration/).
 I am also available for one-on-one coaching and group facilitation.
 
 Lately, I'm curious about:

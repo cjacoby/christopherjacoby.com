@@ -6,13 +6,14 @@ title: "Christopher Jacoby"
 ![](20210507-PORTRAIT.jpg){style="border-radius: 10%"}
 :::
 
-I am a Staff Research Engineer at Antares Audio Technologies, as well as: husband, father, musician, hobbyist baker, and coffee enthusiast.
+I am a Senior Research Engineer at Spotify at the Artist First AI Music Lab.
+I am also available for one-on-one coaching and group facilitation.
 
 Lately, I'm curious about:
 
 - Deep Learning on Audio Signals (especially singing & the human voice)
 - Crafting the context for high performing *research* teams / organizations.
-- Agile / Agility / Scrum / etc.
-- Facilitating experiences that connect each other as whole humans.
+- Facilitating experiences that connect us as whole humans.
+- [Transformational Coaching](https://coachingfederation.org/blog/mastering-transformational-coaching-for-lasting-client-change/).
 
 If you'd like to connect or chat about any of these, please reach out!

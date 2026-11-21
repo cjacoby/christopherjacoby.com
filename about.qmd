@@ -15,7 +15,7 @@ about:
       href: https://github.com/cjacoby
 ---
 
-I am a Staff Research Engineer at Antares Audio Technologies, a musician, hobbyist baker, and coffee enthusiast.
+I am a Senior Research Engineer at Spotify, a musician, hobbyist baker, and coffee enthusiast.
 
 I'm interested in:
 
